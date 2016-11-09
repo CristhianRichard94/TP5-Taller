@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EJ4.Properties
+namespace EJ3.Properties
 {
 
 
