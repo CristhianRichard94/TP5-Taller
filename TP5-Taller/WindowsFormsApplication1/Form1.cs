@@ -19,8 +19,10 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string mensaje
-            MessageBox.Show(mensaje)
+            string mensaje = "El componente  " +  radioButton1.Text + "está  " + radioButton1.Checked +"          El componente  " + checkBox1.Text + "está  " + checkBox1.Checked + ",El componente  " +  radioButton2.Text + "está  " + radioButton2.Checked+ "         El componente  " + checkBox2.Text + "está  " + checkBox2.Checked+ ",El componente  " + radioButton3.Text + "está  " + radioButton3.Checked;
+            mensaje = mensaje.Replace(",", "\n");
+            MessageBox.Show(mensaje);
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
