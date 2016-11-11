@@ -76,7 +76,7 @@ namespace EJ5
                 {
                     label6.Visible = true;
                     label6.Text = "El Perimetro es:";
-                    label7.Text=(fachada.CalcularPerimetroTriangulo(x1,y1,x2,y2,x3,y3)).ToString();
+                    label7.Text = (fachada.CalcularPerimetroTriangulo(x1, y1, x2, y2, x3, y3)).ToString();
                 }
                 else
                 {
@@ -104,6 +104,12 @@ namespace EJ5
                     label7.Text = (fachada.CalcularAreaCirculo(x1, y1, radio)).ToString();
                 }
             }
+            MessageBox.Show(label6.Text + "   " + label7.Text);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

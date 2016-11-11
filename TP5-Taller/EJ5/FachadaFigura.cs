@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EJ5
 {
-    class FachadaFigura
+    public class FachadaFigura
     {
         /// <summary>
         /// Se encarga de recibir los valores de program y llama al constructor de Triangulo, luego accede a la propiedad Perimetro

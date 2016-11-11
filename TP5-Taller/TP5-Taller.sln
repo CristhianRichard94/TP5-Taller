@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ3", "EJ3\EJ3.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ5", "EJ5\EJ5.csproj", "{F22F235F-B4B3-4A97-BA93-D70258EBC85D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EJ6", "EJ6\EJ6.csproj", "{64C4971F-EC7E-4983-B9C2-C41D2A80B143}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F22F235F-B4B3-4A97-BA93-D70258EBC85D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F22F235F-B4B3-4A97-BA93-D70258EBC85D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F22F235F-B4B3-4A97-BA93-D70258EBC85D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64C4971F-EC7E-4983-B9C2-C41D2A80B143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64C4971F-EC7E-4983-B9C2-C41D2A80B143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64C4971F-EC7E-4983-B9C2-C41D2A80B143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64C4971F-EC7E-4983-B9C2-C41D2A80B143}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
