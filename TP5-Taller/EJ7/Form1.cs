@@ -13,6 +13,7 @@ namespace EJ7
     public partial class Form1 : Form
     {
         static Fachada fachada = new Fachada();
+
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +33,12 @@ namespace EJ7
         {
 
         }
-
+        /// <summary>
+        /// Seleccionado este botón toma el texto del textBox1 y lo encripta y desencripta
+        /// según el encriptador que seleccione en el comboBox1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             string input = textBox1.Text;

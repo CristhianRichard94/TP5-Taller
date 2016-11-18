@@ -21,7 +21,12 @@ namespace EJ3
         {
 
         }
-
+        /// <summary>
+        /// Dependiendo el número seleccionado en el comboBox devuelve la traducción 
+        /// al inglés del mismo
+        /// </summary>
+        /// <param name="sender"></param> 
+        /// <param name="e"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] traducciones = { "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten" };

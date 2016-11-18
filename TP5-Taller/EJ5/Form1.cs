@@ -25,9 +25,14 @@ namespace EJ5
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
-
+        /// <summary>
+        /// Cuando selecciona esta opción habilita el ingreso de las coordendas
+        /// del circulo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             textBox3.Visible = false;
@@ -39,7 +44,12 @@ namespace EJ5
             label12.Visible = false;
 
         }
-
+        /// <summary>
+        /// Cuando selecciona esta opcion habilita el ingreso de las coordenadas
+        /// del triángulo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             textBox3.Visible = true;
@@ -60,7 +70,12 @@ namespace EJ5
         {
 
         }
-
+        /// <summary>
+        /// Realiza las operaciones de calular el perímetro o el área de la figura que 
+        /// ha sido seleccionada anteriormente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button6_Click(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
@@ -110,6 +125,11 @@ namespace EJ5
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
