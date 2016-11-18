@@ -25,27 +25,22 @@ namespace EJ6
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button6.Visible = !(button6.Visible);
-            button7.Visible = !(button7.Visible);
-            button8.Visible = !(button8.Visible);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button9.Visible = !(button9.Visible);
-            button10.Visible = !(button10.Visible);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button9.Visible = !(button9.Visible);
-            button10.Visible = !(button10.Visible);
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            button11.Visible = !(button11.Visible);
-            button12.Visible = !(button12.Visible);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,29 +51,182 @@ namespace EJ6
         private void button6_Click(object sender, EventArgs e)
         {
             string mensaje = ("Acuerdo: " + fachada.Cuentas().CuentaCorriente.Acuerdo + "\n Saldo:" + fachada.Cuentas().CuentaCorriente.Saldo);
-            MessageBox.Show(mensaje);
+            MessageBox.Show(mensaje, "Resumen");
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             string mensaje = ("Acuerdo: " + fachada.Cuentas().CajaAhorro.Acuerdo + "\n Saldo:" + fachada.Cuentas().CajaAhorro.Saldo);
-            MessageBox.Show(mensaje);
+            MessageBox.Show(mensaje, "Resumen");
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            string mensaje = ("             Cuenta Corriente             Caja Ahorro \n Acuerdo:        " + fachada.Cuentas().CuentaCorriente.Acuerdo + "                             " + fachada.Cuentas().CajaAhorro.Acuerdo + "\n Saldo:            " + fachada.Cuentas().CuentaCorriente.Saldo + "                               "+fachada.Cuentas().CajaAhorro.Saldo);
-            MessageBox.Show(mensaje);
+            string mensaje = ("Cuenta Corriente \n Acuerdo:" + fachada.Cuentas().CuentaCorriente.Acuerdo + "\n Saldo:" + fachada.Cuentas().CuentaCorriente.Saldo +"\n \n Caja ahorro \n Acuerdo:"+ fachada.Cuentas().CajaAhorro.Acuerdo + "\n Saldo: " + fachada.Cuentas().CajaAhorro.Saldo);
+            MessageBox.Show(mensaje,"Resumen");
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            float input;
+            float.TryParse(textBox1.Text, out input);
+            if (input == 0)
+            {
+                MessageBox.Show("Error, no se ha ingresado un valor", "Error");
+            }
+            else
+            {
+                try
+                {
+                    fachada.Cuentas().CajaAhorro.DebitarSaldo(input);
+                    MessageBox.Show("Se ha debitado con exito", "Accion completada");
+                }
+                catch (SaldoInsuficienteException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+                catch (SaldoInvalidoException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+            }
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+            float input;
+            float.TryParse(textBox1.Text, out input);
+            if (input == 0)
+            {
+                MessageBox.Show("Error, no se ha ingresado un valor", "Error");
+            }
+            else
+            {
+                try
+                {
+                    fachada.Transferir(fachada.Cuentas().CuentaCorriente, fachada.Cuentas().CajaAhorro, input);
+                    MessageBox.Show("Se ha transferido con exito", "Accion completada");
+                }
+                catch (SaldoInvalidoException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+            }
+        }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            float input;
+            float.TryParse(textBox1.Text, out input);
+            if (input == 0)
+            {
+                MessageBox.Show("Error, no se ha ingresado un valor", "Error");
+            }
+            else
+            {
+                try
+                {
+                    fachada.Cuentas().CajaAhorro.DebitarSaldo(input);
+                    MessageBox.Show("Se ha debitado con exito", "Accion completada");
+                }
+                catch(SaldoInsuficienteException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+                catch (SaldoInvalidoException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            float input;
+            float.TryParse(textBox1.Text, out input);
+            if (input ==0)
+            {
+                MessageBox.Show("Error, no se ha ingresado un valor","Error");
+            }
+            else
+            {
+                try
+                {
+                    fachada.Cuentas().CajaAhorro.AcreditarSaldo(input);
+                    MessageBox.Show("Se ha acreditado con exito","Accion completada");
+                }
+                catch (SaldoInvalidoException exception)
+                {
+                    MessageBox.Show(exception.Message,"Error");
+                }
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            float input;
+            float.TryParse(textBox1.Text, out input);
+            if (input == 0)
+            {
+                MessageBox.Show("Error, no se ha ingresado un valor", "Error");
+            }
+            else
+            {
+                try
+                {
+                    fachada.Cuentas().CuentaCorriente.AcreditarSaldo(input);
+                    MessageBox.Show("Se ha acreditado con exito", "Accion completada");
+                }
+                catch (SaldoInvalidoException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+                catch (SaldoInsuficienteException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            float input;
+            float.TryParse(textBox1.Text, out input);
+            if (input == 0)
+            {
+                MessageBox.Show("Error, no se ha ingresado un valor", "Error");
+            }
+            else
+            {
+                try
+                {
+                    fachada.Transferir(fachada.Cuentas().CajaAhorro,fachada.Cuentas().CuentaCorriente,input);
+                    MessageBox.Show("Se ha transferido con exito", "Accion completada");
+                }
+                catch (SaldoInvalidoException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+                catch (SaldoInsuficienteException exception)
+                {
+                    MessageBox.Show(exception.Message, "Error");
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
