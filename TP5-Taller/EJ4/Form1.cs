@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EJ1
+namespace EJ4
 {
     public partial class Form1 : Form
     {
@@ -17,59 +17,72 @@ namespace EJ1
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        { }
         /// <summary>
-        /// Seleccionando este botón devuelve un mensaje con el nombre del mismo
-        /// y el titulo de la ventana
+        /// Agrega una línea con el nombre del botón que seleccionado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha clickeado el boton 1","Cuadro 1");
+            textBox1.Text += "Boton 1";
+            textBox1.Text += Environment.NewLine;
         }
         /// <summary>
-        /// Seleccionando este botón devuelve un mensaje con el nombre del mismo
-        /// y el titulo de la ventana
+        /// Agrega una línea con el nombre del botón que seleccionado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha clickeado el boton 2", "Cuadro 2");
+            textBox1.Text += "Boton 2";
+            textBox1.Text += Environment.NewLine;
         }
         /// <summary>
-        /// Seleccionando este botón devuelve un mensaje con el nombre del mismo
-        /// y el titulo de la ventana
+        /// Agrega una línea con el nombre del botón que seleccionado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha clickeado el boton 3", "Cuadro 3");
+            textBox1.Text += "Boton 3";
+            textBox1.Text += Environment.NewLine;
         }
         /// <summary>
-        /// Seleccionando este botón devuelve un mensaje con el nombre del mismo
-        /// y el titulo de la ventana
+        /// Agrega una línea con el nombre del botón que seleccionado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha clickeado el boton 4", "Cuadro 4");
+            textBox1.Text += "Boton 4";
+            textBox1.Text += Environment.NewLine;
         }
         /// <summary>
-        /// Seleccionando este botón devuelve un mensaje con el nombre del mismo
-        /// y el titulo de la ventana
+        /// Agrega una línea con el nombre del botón que seleccionado
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se ha clickeado el boton 5", "Cuadro 5");
+            textBox1.Text += "Boton 5";
+            textBox1.Text += Environment.NewLine;
+        }
+        /// <summary>
+        /// Agrega una línea con el nombre del botón que seleccionado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button6_Click(object sender, EventArgs e)
+        {
+            textBox1.Text += "Boton 6";
+            textBox1.Text += Environment.NewLine;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
