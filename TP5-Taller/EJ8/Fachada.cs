@@ -28,7 +28,7 @@ namespace EJ8
         private Fachada()
         {
             iRepositorio = new RepositorioUsuario();
-            this.iCantidadID = 0;
+            this.iCantidadID = 1;
         }
 
         /// <summary>
@@ -106,6 +106,7 @@ namespace EJ8
         public List<Usuario> ObtenerComparadosPor(string atributoOrdenacion)
         {
             List<Usuario> lista;
+
             switch (atributoOrdenacion)
             {
                 case "CorreoElectronico":
@@ -114,8 +115,7 @@ namespace EJ8
                 case "NombreCompleto":
                     lista = this.iRepositorio.ObtenerComparadosPor(new OrdenarPorNombreDesc());
                     break;
-                default:
-                    lista = this.iRepositorio.ObtenerTodos();
+                default: lista = this.iRepositorio.ObtenerTodos();
                     lista.Sort();
                     break;
             }

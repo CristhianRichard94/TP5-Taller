@@ -100,8 +100,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_Cerrar);
             this.Controls.Add(this.button_Aceptar);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "agregarForm";
-            this.Text = "AgregarForm";
+            this.Text = "Agregar";
             this.Load += new System.EventHandler(this.agregarForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

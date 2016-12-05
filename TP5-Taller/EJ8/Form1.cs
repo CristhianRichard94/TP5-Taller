@@ -11,8 +11,7 @@ using System.Windows.Forms;
 namespace EJ8
 {
     public partial class Form1 : Form
-    {
-        static public RepositorioUsuario repo = new RepositorioUsuario();
+    { 
         public Form1()
         {
             InitializeComponent();
@@ -24,11 +23,6 @@ namespace EJ8
 
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -37,10 +31,9 @@ namespace EJ8
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             agregarForm MDIChild = new agregarForm();
-            // Set the Parent Form of the Child window.
-            MDIChild.MdiParent = this;
-            // Display the new form.
+            //MDIChild.MdiParent = this;  (Con esta linea no abren las ventanas)
             MDIChild.Show();
+            //Cuando se cierra la ventana llama al metodo form_formClosing que actualiza la tabla de la ventana principal
             MDIChild.FormClosing += new FormClosingEventHandler(Form_FormClosing);
         }
 
@@ -51,13 +44,13 @@ namespace EJ8
         /// <param name="e"></param>
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.ActualizarLista();
+            this.ActualizarTabla();
         }
 
         /// <summary>
-        /// Actualiza la lista
+        /// Actualiza la tabla
         /// </summary>
-        private void ActualizarLista()
+        private void ActualizarTabla()
         {
             try
             {
@@ -87,9 +80,7 @@ namespace EJ8
                 usuario.CorreoElectronico = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
                 editarForm MDIChild = new editarForm(usuario);
-                // Set the Parent Form of the Child window.
-                MDIChild.MdiParent = this;
-                // Display the new form.
+                //MDIChild.MdiParent = this;
                 MDIChild.Show();
                 MDIChild.FormClosing += new FormClosingEventHandler(Form_FormClosing);
             }
@@ -110,22 +101,38 @@ namespace EJ8
             {
                 string usuarioAEliminar = dataGridView1.CurrentRow.Cells[0].Value.ToString();
                 Fachada.Instancia.Eliminar(usuarioAEliminar);
-                this.ActualizarLista();
+                this.ActualizarTabla();
             }
             catch (NullReferenceException)
             {
                 MessageBox.Show("No se ha seleccionado ningún usuario");
             }
         }
-        private void dataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string nombreColumna = dataGridView1.Columns[e.ColumnIndex].Name;
+            
+        }
+        /// <summary>
+        /// boton del menu para Salir
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ordenarPorNombreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string nombreColumna = "NombreCompleto";
             try
             {
                 var source = new BindingSource();
                 List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(nombreColumna);
                 source.DataSource = list;
-                this.dataGridView1.DataSource = source;
+                this.dataGridView1.DataSource = source.DataSource;
+                ActualizarTabla();
             }
             catch (NullReferenceException)
             {
@@ -133,5 +140,38 @@ namespace EJ8
             }
         }
 
+        private void ordenarPorCorreoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string nombreColumna = "CorreoElectronico";
+            try
+            {
+                var source = new BindingSource();
+                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(nombreColumna);
+                source.DataSource = list;
+                this.dataGridView1.DataSource = source.DataSource;
+                ActualizarTabla();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("No existen elementos");
+            }
+        }
+
+        private void ordenarPorCodigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string nombreColumna = "Codigo";
+            try
+            {
+                var source = new BindingSource();
+                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(nombreColumna);
+                source.DataSource = list;
+                this.dataGridView1.DataSource = source.DataSource;
+                ActualizarTabla();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("No existen elementos");
+            }
+        }
     }
 }

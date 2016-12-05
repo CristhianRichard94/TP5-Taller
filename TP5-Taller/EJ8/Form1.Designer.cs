@@ -33,8 +33,13 @@
             this.añadirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenarPorNombreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenarPorCorreoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenarPorCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -42,7 +47,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operacionesToolStripMenuItem});
+            this.operacionesToolStripMenuItem,
+            this.ordenamientoToolStripMenuItem,
+            this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(791, 24);
@@ -54,39 +61,31 @@
             this.operacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.añadirToolStripMenuItem,
             this.modificarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
-            this.salirToolStripMenuItem});
+            this.eliminarToolStripMenuItem});
             this.operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
-            this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.operacionesToolStripMenuItem.Text = "Operaciones";
+            this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.operacionesToolStripMenuItem.Text = "Gestion";
             // 
             // añadirToolStripMenuItem
             // 
             this.añadirToolStripMenuItem.Name = "añadirToolStripMenuItem";
-            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.añadirToolStripMenuItem.Text = "Agregar";
             this.añadirToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.modificarToolStripMenuItem.Text = "Editar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -98,6 +97,52 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salirToolStripMenuItem1});
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // salirToolStripMenuItem1
+            // 
+            this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem1.Text = "Salir";
+            this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
+            // 
+            // ordenamientoToolStripMenuItem
+            // 
+            this.ordenamientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenarPorNombreToolStripMenuItem,
+            this.ordenarPorCorreoToolStripMenuItem,
+            this.ordenarPorCodigoToolStripMenuItem});
+            this.ordenamientoToolStripMenuItem.Name = "ordenamientoToolStripMenuItem";
+            this.ordenamientoToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.ordenamientoToolStripMenuItem.Text = "Ordenamiento";
+            // 
+            // ordenarPorNombreToolStripMenuItem
+            // 
+            this.ordenarPorNombreToolStripMenuItem.Name = "ordenarPorNombreToolStripMenuItem";
+            this.ordenarPorNombreToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.ordenarPorNombreToolStripMenuItem.Text = "Ordenar Por nombre";
+            this.ordenarPorNombreToolStripMenuItem.Click += new System.EventHandler(this.ordenarPorNombreToolStripMenuItem_Click);
+            // 
+            // ordenarPorCorreoToolStripMenuItem
+            // 
+            this.ordenarPorCorreoToolStripMenuItem.Name = "ordenarPorCorreoToolStripMenuItem";
+            this.ordenarPorCorreoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.ordenarPorCorreoToolStripMenuItem.Text = "Ordenar Por Correo";
+            this.ordenarPorCorreoToolStripMenuItem.Click += new System.EventHandler(this.ordenarPorCorreoToolStripMenuItem_Click);
+            // 
+            // ordenarPorCodigoToolStripMenuItem
+            // 
+            this.ordenarPorCodigoToolStripMenuItem.Name = "ordenarPorCodigoToolStripMenuItem";
+            this.ordenarPorCodigoToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.ordenarPorCodigoToolStripMenuItem.Text = "Ordenar Por Codigo";
+            this.ordenarPorCodigoToolStripMenuItem.Click += new System.EventHandler(this.ordenarPorCodigoToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -108,6 +153,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -125,8 +171,13 @@
         private System.Windows.Forms.ToolStripMenuItem añadirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordenamientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenarPorNombreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenarPorCorreoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenarPorCodigoToolStripMenuItem;
     }
 }
 
