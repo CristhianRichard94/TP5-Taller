@@ -30,11 +30,11 @@ namespace EJ8
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            agregarForm MDIChild = new agregarForm();
-            //MDIChild.MdiParent = this;  (Con esta linea no abren las ventanas)
-            MDIChild.Show();
+            agregarForm agregar = new agregarForm();
+            //agregar.MdiParent = this;  (Con esta linea no abren las ventanas)
+            agregar.Show();
             //Cuando se cierra la ventana llama al metodo form_formClosing que actualiza la tabla de la ventana principal
-            MDIChild.FormClosing += new FormClosingEventHandler(Form_FormClosing);
+            agregar.FormClosing += new FormClosingEventHandler(Form_FormClosing);
         }
 
         /// <summary>
@@ -79,10 +79,10 @@ namespace EJ8
                 usuario.NombreCompleto = dataGridView1.CurrentRow.Cells[1].Value.ToString();
                 usuario.CorreoElectronico = dataGridView1.CurrentRow.Cells[2].Value.ToString();
 
-                editarForm MDIChild = new editarForm(usuario);
-                //MDIChild.MdiParent = this;
-                MDIChild.Show();
-                MDIChild.FormClosing += new FormClosingEventHandler(Form_FormClosing);
+                editarForm editar = new editarForm(usuario);
+                //editar.MdiParent = this;
+                editar.Show();
+                editar.FormClosing += new FormClosingEventHandler(Form_FormClosing);
             }
             catch (NullReferenceException)
             {
@@ -125,11 +125,11 @@ namespace EJ8
 
         private void ordenarPorNombreToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string nombreColumna = "NombreCompleto";
+            string ordenamiento = "NombreCompleto";
             try
             {
                 var source = new BindingSource();
-                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(nombreColumna);
+                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(ordenamiento);
                 source.DataSource = list;
                 this.dataGridView1.DataSource = source.DataSource;
                 ActualizarTabla();
@@ -142,11 +142,11 @@ namespace EJ8
 
         private void ordenarPorCorreoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string nombreColumna = "CorreoElectronico";
+            string ordenamiento = "CorreoElectronico";
             try
             {
                 var source = new BindingSource();
-                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(nombreColumna);
+                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(ordenamiento);
                 source.DataSource = list;
                 this.dataGridView1.DataSource = source.DataSource;
                 ActualizarTabla();
@@ -159,11 +159,11 @@ namespace EJ8
 
         private void ordenarPorCodigoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string nombreColumna = "Codigo";
+            string ordenamiento = "Codigo";
             try
             {
                 var source = new BindingSource();
-                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(nombreColumna);
+                List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(ordenamiento);
                 source.DataSource = list;
                 this.dataGridView1.DataSource = source.DataSource;
                 ActualizarTabla();
@@ -172,6 +172,23 @@ namespace EJ8
             {
                 MessageBox.Show("No existen elementos");
             }
+        }
+
+        private void ordenamientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buscarPorCodigoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Buscar buscar = new Buscar();
+            buscar.Show();
+        }
+
+        private void buscarAproximadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Aprox aproxForm = new Aprox();
+            aproxForm.Show();
         }
     }
 }

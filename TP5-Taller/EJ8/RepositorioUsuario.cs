@@ -15,7 +15,7 @@ namespace EJ8
         /// <summary>
         /// Lista de los usuarios persistidos en memoria
         /// </summary>
-        private IDictionary<string, Usuario> iRepositorio;
+        private Dictionary<string, Usuario> iRepositorio;
 
 
 
@@ -76,7 +76,7 @@ namespace EJ8
         /// <returns>Tipo de dato usuario que representa aquél cuyo código es igual al suministrado por parámetro</returns>
         public Usuario ObtenerPorCodigo(string pCodigo)
         {
-            return this.iRepositorio[pCodigo];
+                return this.iRepositorio[pCodigo];
         }
 
 
@@ -86,16 +86,15 @@ namespace EJ8
         /// </summary>
         /// <param name="pNombre"> subcadena para buscar</param>
         /// <returns></returns>
-        public IList<Usuario> BuscarAproximado (string pNombre)
+        public List<Usuario> BuscarAproximado (string pNombre)
         {
             List<Usuario> lista = new List<Usuario>();
             lista = this.ObtenerTodos();
-            IEnumerator<Usuario> enumerador = lista.GetEnumerator();
-            while (enumerador.MoveNext())
-            {
-                if (enumerador.Current.NombreCompleto.StartsWith(pNombre))
+            foreach (Usuario us in lista)
+           {
+                if (us.NombreCompleto.Contains(pNombre))
                 {
-                    lista.Add(enumerador.Current.Copy());
+                    lista.Add(us.Copy());
                 }
             }
             return lista;
@@ -109,10 +108,62 @@ namespace EJ8
         /// <returns></returns>
         public List<Usuario> ObtenerComparadosPor(IComparer<Usuario> pComparador)
         {
-            List<Usuario> ILista = this.iRepositorio.Values.ToList<Usuario>();
-            ILista.Sort(pComparador.Compare);
-            return ILista;
+            List<Usuario> iLista = this.iRepositorio.Values.ToList<Usuario>();
+            iLista.Sort(pComparador);
+            return iLista;
         }
 
     }
+
+    /// <summary>
+    /// Clase heredada de IComparer
+    /// </summary>
+    public class OrdenarPorNombreDesc : IComparer<Usuario>
+    {
+        /// <summary>
+        /// Implementacion de Compare, permite devolver usuarios ordenados por nombre descendente
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public int Compare(Usuario x, Usuario y)
+        {
+            return x.NombreCompleto.CompareTo(y.NombreCompleto);
+        }
+    }
+
+    /// <summary>
+    /// Clase heredada de IComparer
+    /// </summary>
+    public class OrdenarPorNombreAsc : IComparer<Usuario>
+    {
+        /// <summary>
+        /// Implementacion de Compare, permite devolver usuarios ordenados por nombre ascendente
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public int Compare(Usuario x, Usuario y)
+        {
+            return -(x.NombreCompleto.CompareTo(y.NombreCompleto));
+        }
+    }
+
+    /// <summary>
+    /// Clase heredada de IComparer
+    /// </summary>
+    public class OrdenarPorCorreo : IComparer<Usuario>
+    {
+        /// <summary>
+        /// Implementacion de Compare, permite devolver usuarios ordenados por correo
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public int Compare(Usuario x, Usuario y)
+        {
+            return x.CorreoElectronico.CompareTo(y.CorreoElectronico);
+        }
+    }
+
 }

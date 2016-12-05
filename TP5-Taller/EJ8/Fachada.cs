@@ -98,6 +98,11 @@ namespace EJ8
             return this.iRepositorio.ObtenerTodos();
         }
 
+        public Usuario ObtenerPorCodigo(string pCodigo)
+        {
+            return this.iRepositorio.ObtenerPorCodigo(pCodigo);
+        }
+
         /// <summary>
         /// Obtiene la lista ordenada por un atributo en particular
         /// </summary>
@@ -116,10 +121,13 @@ namespace EJ8
                     lista = this.iRepositorio.ObtenerComparadosPor(new OrdenarPorNombreDesc());
                     break;
                 default: lista = this.iRepositorio.ObtenerTodos();
-                    lista.Sort();
                     break;
             }
             return lista;
+        }
+        public List<Usuario> BuscarAproximado(string pNombre)
+        {
+            return this.iRepositorio.BuscarAproximado(pNombre);
         }
     }
 }
