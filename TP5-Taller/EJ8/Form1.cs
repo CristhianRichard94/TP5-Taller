@@ -128,11 +128,15 @@ namespace EJ8
             string ordenamiento = "NombreCompleto";
             try
             {
+        
                 var source = new BindingSource();
                 List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(ordenamiento);
                 source.DataSource = list;
                 this.dataGridView1.DataSource = source.DataSource;
-                ActualizarTabla();
+            
+               
+                
+                
             }
             catch (NullReferenceException)
             {
@@ -149,7 +153,7 @@ namespace EJ8
                 List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(ordenamiento);
                 source.DataSource = list;
                 this.dataGridView1.DataSource = source.DataSource;
-                ActualizarTabla();
+ 
             }
             catch (NullReferenceException)
             {
@@ -166,7 +170,7 @@ namespace EJ8
                 List<Usuario> list = Fachada.Instancia.ObtenerComparadosPor(ordenamiento);
                 source.DataSource = list;
                 this.dataGridView1.DataSource = source.DataSource;
-                ActualizarTabla();
+  
             }
             catch (NullReferenceException)
             {

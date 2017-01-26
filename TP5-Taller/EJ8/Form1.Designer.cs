@@ -35,6 +35,7 @@
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarPorCodigoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarAproximadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenarPorNombreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenarPorCorreoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buscarAproximadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,21 +73,21 @@
             // añadirToolStripMenuItem
             // 
             this.añadirToolStripMenuItem.Name = "añadirToolStripMenuItem";
-            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.añadirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.añadirToolStripMenuItem.Text = "Agregar";
             this.añadirToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.modificarToolStripMenuItem.Text = "Editar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
@@ -106,6 +106,13 @@
             this.buscarPorCodigoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.buscarPorCodigoToolStripMenuItem.Text = "Buscar por Codigo";
             this.buscarPorCodigoToolStripMenuItem.Click += new System.EventHandler(this.buscarPorCodigoToolStripMenuItem_Click);
+            // 
+            // buscarAproximadoToolStripMenuItem
+            // 
+            this.buscarAproximadoToolStripMenuItem.Name = "buscarAproximadoToolStripMenuItem";
+            this.buscarAproximadoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.buscarAproximadoToolStripMenuItem.Text = "Buscar Aproximado";
+            this.buscarAproximadoToolStripMenuItem.Click += new System.EventHandler(this.buscarAproximadoToolStripMenuItem_Click);
             // 
             // ordenamientoToolStripMenuItem
             // 
@@ -163,13 +170,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(791, 307);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // buscarAproximadoToolStripMenuItem
-            // 
-            this.buscarAproximadoToolStripMenuItem.Name = "buscarAproximadoToolStripMenuItem";
-            this.buscarAproximadoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
-            this.buscarAproximadoToolStripMenuItem.Text = "Buscar Aproximado";
-            this.buscarAproximadoToolStripMenuItem.Click += new System.EventHandler(this.buscarAproximadoToolStripMenuItem_Click);
             // 
             // Form1
             // 
